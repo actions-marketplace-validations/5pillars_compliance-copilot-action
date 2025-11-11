@@ -127,7 +127,7 @@ def post_review_comments(resultsObj, fileName):
         description = result.get("description")
         severity = result.get("severity")
         checkId = result.get("id")
-        if severity == "n/a":
+        if severity.lower() == "n/a":
             severity = "none"
         severityEmoji = get_severity_emoji(severity)
         status = result.get("finding")
