@@ -26,7 +26,7 @@ jobs:
       steps:
       - uses: actions/checkout@v4
 
-      - uses: 5pillars/compliance-copilot-action@v1.0.0
+      - uses: 5pillars/compliance-copilot-action@v1.1.0
         env:
             SIXPILLARS_API_TOKEN: ${{ secrets.SIXPILLARS_API_TOKEN }}
             GITHUB_TOKEN: ${{ github.token }}
