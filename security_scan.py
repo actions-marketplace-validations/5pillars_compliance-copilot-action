@@ -127,9 +127,12 @@ def post_review_comments(resultsObj, fileName):
         description = result.get("description")
         severity = result.get("severity")
         checkId = result.get("id")
+        if severity.lower() == "n/a":
+            severity = "none"
         severityEmoji = get_severity_emoji(severity)
         status = result.get("finding")
         print(status)
+        
         if status == "FAILED" and fileLineRange and  Severity[severity.lower()].value <= Severity[SEVERITY_LEVEL.lower()].value:
             startLine = int(fileLineRange.split("-")[0])
             if severityEmoji != "":
